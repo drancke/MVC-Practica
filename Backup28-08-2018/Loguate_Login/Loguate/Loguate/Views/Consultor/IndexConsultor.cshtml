@@ -1,0 +1,38 @@
+﻿<strong><h4>Registro de Consultores</h4></strong>
+<hr />
+
+@{
+    ViewBag.Title = "IndexConsultor";
+
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#firstTab">Ver Consultores</a></li>
+    <li><a data-toggle="tab" href="#secondTab">Crear Nuevo Consultor</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in active">@Html.Action("VerConsultor")</div>
+    <div id="secondTab" class="tab-pane fade in ">@Html.Action("AgregarOrEditarConsultores")</div>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#CosultorTable").DataTable();
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+
+    </script>
+}
+
+
+

@@ -1,0 +1,48 @@
+﻿
+@model Loguate.Models.Empresa
+
+@{
+    ViewBag.Title = Model.Cliente.CodigoRNC +  " " + Model.Nombre;
+    //Layout = null;
+}
+
+<ol class="breadcrumb">
+    <li><a href="~/Empresa/IndexEmpresa" style="color:blue">Empresa</a></li>
+    <li class="active"> @Model.Nombre</li>
+</ol>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Informacion de la empresa</div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>RNC</dt>
+            <dd>@Model.Cliente.CodigoRNC </dd>
+            <dt>Nombre</dt>
+            <dd>@Model.Nombre</dd>
+            <dt>Dirección</dt>
+            <dd>@Model.Direccion</dd>
+            <dt>Teléfono</dt>
+            <dd>@Model.Telefono</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Productos instalados en  la empresa</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            @foreach (var p in Model.Productos)
+            {
+                <li class="list-group-item">@p.Nombre</li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+

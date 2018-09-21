@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Loguate.Models.Consultor>
+
+@{
+    ViewBag.Title = "VerConsultor";
+    Layout = null;
+}
+
+<div class="borde">
+
+    <table class="table table-striped table-condensed" id="CosultorTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AreaModulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaEstatus)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.archivo)
+                </th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaModulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaEstatus)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.archivo)
+                    </td>*@
+                    <td>
+                        <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AgregarOrEditarConsultores", "Consultor", new { id=@item.ID_Consultor})')"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("DeleteConsultor", "Consultor", new { id=@item.ID_Consultor})')"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+
+
+</div>

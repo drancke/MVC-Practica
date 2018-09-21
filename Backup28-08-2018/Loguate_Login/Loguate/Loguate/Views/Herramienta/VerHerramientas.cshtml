@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Loguate.Models.Herramienta>
+
+
+@{
+    ViewBag.Title = "VerHerramientas";
+    Layout = null;
+
+}
+<div class="borde">
+    <br />
+    <table class="table table-striped table-condensed" id="ToolTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AgregarOrEditarHerramienta","Herramienta", new { id=@item.ID_Herramientas})')"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("DeleteHerramienta","Herramienta", new { id=@item.ID_Herramientas})')"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+</div>

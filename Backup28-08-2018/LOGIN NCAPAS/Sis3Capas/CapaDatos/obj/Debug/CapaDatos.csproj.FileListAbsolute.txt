@@ -1,0 +1,5 @@
+E:\TUT\PROYECTOS\Sis3Capas\CapaDatos\bin\Debug\CapaDatos.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaDatos\bin\Debug\CapaDatos.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaDatos\obj\Debug\CapaDatos.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaDatos\obj\Debug\CapaDatos.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

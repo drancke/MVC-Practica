@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D16FD2E-2C58-46C6-A421-7312F0C17D30}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loguate</RootNamespace>
+    <AssemblyName>Loguate</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreaModuloController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ConsultorController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
+    <Compile Include="Controllers\HerramientaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ReporteFormController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalClass.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AreaConsultor.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AreaModulo.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consultor.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Consultores.cs" />
+    <Compile Include="Models\Contacto.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Empresa.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estatu.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FormProyecto.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Herramienta.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Herramientss.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LogicOneDB2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicOneDB2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogicOneDB2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogicOneDB2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicOneDB2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Modulo.cs" />
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Productoclas.cs" />
+    <Compile Include="Models\roll.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tipo.cs">
+      <DependentUpon>LogicOneDB2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppFiles\Images\8985207189_01ea27882d_m184950083.jpg" />
+    <Content Include="AppFiles\Images\Alvaro180718363.jpg" />
+    <Content Include="AppFiles\Images\Alvaro180724506.jpg" />
+    <Content Include="AppFiles\Images\Alvaro180732148.jpg" />
+    <Content Include="AppFiles\Images\Alvaro180959567.jpg" />
+    <Content Include="AppFiles\Images\Alvaro182556333.jpg" />
+    <Content Include="AppFiles\Images\Alvaro182600802.jpg" />
+    <Content Include="AppFiles\Images\Alvaro184402798.jpg" />
+    <Content Include="AppFiles\Images\Alvaro184704926.jpg" />
+    <Content Include="AppFiles\Images\Alvaro184724284.jpg" />
+    <Content Include="AppFiles\Images\Alvaro185428488.jpg" />
+    <Content Include="AppFiles\Images\Alvaro185814376.jpg" />
+    <Content Include="AppFiles\Images\avatar180754209.jpg" />
+    <Content Include="AppFiles\Images\avatar180845081.jpg" />
+    <Content Include="AppFiles\Images\avatar184344063.jpg" />
+    <Content Include="AppFiles\Images\avatar184449767.jpg" />
+    <Content Include="AppFiles\Images\default.png" />
+    <Content Include="AppFiles\Images\form2180027709.png" />
+    <Content Include="AppFiles\Images\form2180138999.png" />
+    <Content Include="AppFiles\Images\form2180206128.png" />
+    <Content Include="AppFiles\Images\form2180220516.png" />
+    <Content Include="AppFiles\Images\form2180226662.png" />
+    <Content Include="AppFiles\Images\form2180232389.png" />
+    <Content Include="AppFiles\Images\form2180238249.png" />
+    <Content Include="AppFiles\Images\form2180244171.png" />
+    <Content Include="AppFiles\Images\form2180249787.png" />
+    <Content Include="AppFiles\Images\form2180309749.png" />
+    <Content Include="AppFiles\Images\form2180316706.png" />
+    <Content Include="AppFiles\Images\form2180317855.png" />
+    <Content Include="AppFiles\Images\form2180635485.png" />
+    <Content Include="AppFiles\Images\form2180752490.png" />
+    <Content Include="AppFiles\Images\form2180905542.png" />
+    <Content Include="AppFiles\Images\form2181424260.png" />
+    <Content Include="AppFiles\Images\form2181523619.png" />
+    <Content Include="AppFiles\Images\form2183230550.png" />
+    <Content Include="AppFiles\Images\form2184351190.png" />
+    <Content Include="AppFiles\Images\form2184838367.png" />
+    <Content Include="AppFiles\Images\form2185031169.png" />
+    <Content Include="AppFiles\Images\form2185658992.png" />
+    <Content Include="AppFiles\Images\Para crear un form180213287.png" />
+    <Content Include="AppFiles\Images\Para crear un form184042507.png" />
+    <Content Include="AppFiles\Images\Para crear un form184132829.png" />
+    <Content Include="AppFiles\Images\Para crear un form184433977.png" />
+    <Content Include="AppFiles\Images\Para crear un form184926055.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\navbar.css" />
+    <Content Include="Content\Estilos\css\bootstrap-submenu.css" />
+    <Content Include="Content\Estilos\dist\css\bootstrap-submenu.css" />
+    <Content Include="Content\Estilos\dist\css\bootstrap-submenu.min.css" />
+    <Content Include="Content\Estilos\dist\js\bootstrap-submenu.js" />
+    <Content Include="Content\Estilos\dist\js\bootstrap-submenu.min.js" />
+    <Content Include="Content\Estilos\js\bootstrap-submenu.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\js\navbar.js" />
+    <Content Include="Content\LOGOS-LOGICONE-EDITADO-2.png" />
+    <Content Include="Content\Miestilo.css" />
+    <Content Include="Content\PlugginFile\css\fileinput-rtl.css" />
+    <Content Include="Content\PlugginFile\css\fileinput-rtl.min.css" />
+    <Content Include="Content\PlugginFile\css\fileinput.css" />
+    <Content Include="Content\PlugginFile\css\fileinput.min.css" />
+    <Content Include="Content\PlugginFile\img\loading-sm.gif" />
+    <Content Include="Content\PlugginFile\img\loading.gif" />
+    <Content Include="Content\PlugginFile\js\fileinput.js" />
+    <Content Include="Content\PlugginFile\js\fileinput.min.js" />
+    <Content Include="Content\PlugginFile\js\locales\ar.js" />
+    <Content Include="Content\PlugginFile\js\locales\az.js" />
+    <Content Include="Content\PlugginFile\js\locales\bg.js" />
+    <Content Include="Content\PlugginFile\js\locales\ca.js" />
+    <Content Include="Content\PlugginFile\js\locales\cr.js" />
+    <Content Include="Content\PlugginFile\js\locales\cs.js" />
+    <Content Include="Content\PlugginFile\js\locales\da.js" />
+    <Content Include="Content\PlugginFile\js\locales\de.js" />
+    <Content Include="Content\PlugginFile\js\locales\el.js" />
+    <Content Include="Content\PlugginFile\js\locales\es.js" />
+    <Content Include="Content\PlugginFile\js\locales\et.js" />
+    <Content Include="Content\PlugginFile\js\locales\fa.js" />
+    <Content Include="Content\PlugginFile\js\locales\fi.js" />
+    <Content Include="Content\PlugginFile\js\locales\fr.js" />
+    <Content Include="Content\PlugginFile\js\locales\gl.js" />
+    <Content Include="Content\PlugginFile\js\locales\he.js" />
+    <Content Include="Content\PlugginFile\js\locales\hu.js" />
+    <Content Include="Content\PlugginFile\js\locales\id.js" />
+    <Content Include="Content\PlugginFile\js\locales\it.js" />
+    <Content Include="Content\PlugginFile\js\locales\ja.js" />
+    <Content Include="Content\PlugginFile\js\locales\ka.js" />
+    <Content Include="Content\PlugginFile\js\locales\kr.js" />
+    <Content Include="Content\PlugginFile\js\locales\kz.js" />
+    <Content Include="Content\PlugginFile\js\locales\LANG.js" />
+    <Content Include="Content\PlugginFile\js\locales\lt.js" />
+    <Content Include="Content\PlugginFile\js\locales\nl.js" />
+    <Content Include="Content\PlugginFile\js\locales\no.js" />
+    <Content Include="Content\PlugginFile\js\locales\pl.js" />
+    <Content Include="Content\PlugginFile\js\locales\pt-BR.js" />
+    <Content Include="Content\PlugginFile\js\locales\pt.js" />
+    <Content Include="Content\PlugginFile\js\locales\ro.js" />
+    <Content Include="Content\PlugginFile\js\locales\ru.js" />
+    <Content Include="Content\PlugginFile\js\locales\sk.js" />
+    <Content Include="Content\PlugginFile\js\locales\sl.js" />
+    <Content Include="Content\PlugginFile\js\locales\sv.js" />
+    <Content Include="Content\PlugginFile\js\locales\th.js" />
+    <Content Include="Content\PlugginFile\js\locales\tr.js" />
+    <Content Include="Content\PlugginFile\js\locales\uk.js" />
+    <Content Include="Content\PlugginFile\js\locales\vi.js" />
+    <Content Include="Content\PlugginFile\js\locales\zh-TW.js" />
+    <Content Include="Content\PlugginFile\js\locales\zh.js" />
+    <Content Include="Content\PlugginFile\js\plugins\piexif.js" />
+    <Content Include="Content\PlugginFile\js\plugins\piexif.min.js" />
+    <Content Include="Content\PlugginFile\js\plugins\purify.js" />
+    <Content Include="Content\PlugginFile\js\plugins\purify.min.js" />
+    <Content Include="Content\PlugginFile\js\plugins\sortable.js" />
+    <Content Include="Content\PlugginFile\js\plugins\sortable.min.js" />
+    <Content Include="Content\PlugginFile\themes\explorer-fas\theme.css" />
+    <Content Include="Content\PlugginFile\themes\explorer-fas\theme.js" />
+    <Content Include="Content\PlugginFile\themes\explorer-fas\theme.min.css" />
+    <Content Include="Content\PlugginFile\themes\explorer-fas\theme.min.js" />
+    <Content Include="Content\PlugginFile\themes\explorer-fa\theme.css" />
+    <Content Include="Content\PlugginFile\themes\explorer-fa\theme.js" />
+    <Content Include="Content\PlugginFile\themes\explorer-fa\theme.min.css" />
+    <Content Include="Content\PlugginFile\themes\explorer-fa\theme.min.js" />
+    <Content Include="Content\PlugginFile\themes\explorer\theme.css" />
+    <Content Include="Content\PlugginFile\themes\explorer\theme.js" />
+    <Content Include="Content\PlugginFile\themes\explorer\theme.min.css" />
+    <Content Include="Content\PlugginFile\themes\explorer\theme.min.js" />
+    <Content Include="Content\PlugginFile\themes\fas\theme.js" />
+    <Content Include="Content\PlugginFile\themes\fas\theme.min.js" />
+    <Content Include="Content\PlugginFile\themes\fa\theme.js" />
+    <Content Include="Content\PlugginFile\themes\fa\theme.min.js" />
+    <Content Include="Content\PlugginFile\themes\gly\theme.js" />
+    <Content Include="Content\PlugginFile\themes\gly\theme.min.js" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="Estilos navbar\css\navbar.css" />
+    <Content Include="Estilos navbar\Estilos\css\bootstrap-submenu.css" />
+    <Content Include="Estilos navbar\Estilos\dist\css\bootstrap-submenu.css" />
+    <Content Include="Estilos navbar\Estilos\dist\css\bootstrap-submenu.min.css" />
+    <Content Include="Estilos navbar\Estilos\dist\js\bootstrap-submenu.js" />
+    <Content Include="Estilos navbar\Estilos\dist\js\bootstrap-submenu.min.js" />
+    <Content Include="Estilos navbar\Estilos\js\bootstrap-submenu.js" />
+    <Content Include="Estilos navbar\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Estilos navbar\js\navbar.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="js\menuresponsive.js" />
+    <Content Include="Login_v1\css\main.css" />
+    <Content Include="Login_v1\css\util.css" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login_v1\fonts\montserrat\OFL.txt" />
+    <Content Include="Login_v1\images\icons\favicon.ico" />
+    <Content Include="Login_v1\images\img-01.png" />
+    <Content Include="Login_v1\index.html" />
+    <Content Include="Login_v1\js\main.js" />
+    <Content Include="Login_v1\vendor\animate\animate.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login_v1\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login_v1\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login_v1\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login_v1\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login_v1\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login_v1\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login_v1\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login_v1\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login_v1\vendor\select2\select2.css" />
+    <Content Include="Login_v1\vendor\select2\select2.js" />
+    <Content Include="Login_v1\vendor\select2\select2.min.css" />
+    <Content Include="Login_v1\vendor\select2\select2.min.js" />
+    <Content Include="Login_v1\vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="Models\LogicOneDB2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogicOneDB2.edmx</DependentUpon>
+      <LastGenOutput>LogicOneDB2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LogicOneDB2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogicOneDB2.edmx</DependentUpon>
+      <LastGenOutput>LogicOneDB2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login_v1\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Login_v1\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login_v1\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="AppFiles\Images\beginning-C-Sharp-object-oriented-programming185556238.pdf" />
+    <Content Include="AppFiles\Images\CSharp+Book+2016+Rob+Miles+8.2185143299.pdf" />
+    <Content Include="AppFiles\Images\CSharp+Book+2016+Rob+Miles+8.2185432881.pdf" />
+    <Content Include="AppFiles\Images\FACTURA CERTIFICACION 70 532182219922.pdf" />
+    <Content Include="AppFiles\Images\FACTURA CERTIFICACION 70 532183910375.pdf" />
+    <Content Include="AppFiles\Images\FACTURA EXAMEN CERTIFICACION183636214.pdf" />
+    <Content Include="AppFiles\Images\FACTURA EXAMEN CERTIFICACION185515494.pdf" />
+    <Content Include="AppFiles\Images\foundational-concepts-slides183919322.pdf" />
+    <Content Include="AppFiles\Images\Manual_Comandos_MS-Dos183553991.pdf" />
+    <Content Include="AppFiles\Images\Manual_Comandos_MS-Dos183810230.pdf" />
+    <Content Include="AppFiles\Images\Manual_Comandos_MS-Dos185310321.pdf" />
+    <Content Include="AppFiles\Images\Manual_Comandos_MS-Dos185452461.pdf" />
+    <Content Include="AppFiles\PDF\FACTURA CERTIFICACION 70 532184502399.pdf" />
+    <Content Include="AppFiles\PDF\Manual_Comandos_MS-Dos184743072.pdf" />
+    <Content Include="Estilos navbar\Estilos\dist\css\bootstrap-submenu.min.css.map" />
+    <Content Include="Estilos navbar\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Estilos navbar\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Estilos navbar\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Estilos navbar\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Estilos\dist\css\bootstrap-submenu.min.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\LogicOneDB2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LogicOneDB2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LogicOneDB2.edmx.diagram">
+      <DependentUpon>LogicOneDB2.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\PlugginFile\nuget\build.bat" />
+    <Content Include="Content\PlugginFile\nuget\Package.nuspec" />
+    <Content Include="Content\PlugginFile\scss\fileinput-rtl.scss" />
+    <Content Include="Content\PlugginFile\scss\fileinput.scss" />
+    <Content Include="Content\PlugginFile\scss\themes\explorer-fas\theme.scss" />
+    <Content Include="Content\PlugginFile\scss\themes\explorer-fa\theme.scss" />
+    <Content Include="Content\PlugginFile\scss\themes\explorer\theme.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\dropdown.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\notify.min.js" />
+    <Content Include="Scripts\Scripts.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AreaModulo\IndexArea.cshtml" />
+    <Content Include="Views\Clientes\IndexClientes.cshtml" />
+    <Content Include="Views\Consultor\IndexConsultor.cshtml" />
+    <Content Include="Views\Employee\AddOrEdit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\IndexPrincipal.cshtml" />
+    <Content Include="Views\Empresa\IndexEmpresa.cshtml" />
+    <Content Include="Views\Herramienta\IndexHerramientas.cshtml" />
+    <Content Include="Views\Productos\IndexProducto.cshtml" />
+    <Content Include="Views\ReporteForm\IndexProyecto.cshtml" />
+    <Content Include="Views\Productos\VerProductos.cshtml" />
+    <Content Include="Views\Productos\AgregarOrEditarProducto.cshtml" />
+    <Content Include="Views\Clientes\AgregarOrEditarCliente.cshtml" />
+    <Content Include="Views\Empresa\VerEmpresas.cshtml" />
+    <Content Include="Views\Empresa\AgregarOrEditarEmpresas.cshtml" />
+    <Content Include="Views\Herramienta\VerHerramientas.cshtml" />
+    <Content Include="Views\Herramienta\AgregarOrEditarHerramienta.cshtml" />
+    <Content Include="Views\AreaModulo\VerAreaModulo.cshtml" />
+    <Content Include="Views\AreaModulo\AgregarOrEditarAreaModulos.cshtml" />
+    <Content Include="Views\Consultor\VerConsultor.cshtml" />
+    <Content Include="Views\Consultor\AgregarOrEditarConsultores.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ReporteForm\VerProyectos.cshtml" />
+    <Content Include="Views\Shared\_Login2.cshtml" />
+    <Content Include="Views\Clientes\VerClientes.cshtml" />
+    <Content Include="Views\Clientes\Ver.cshtml" />
+    <Content Include="Views\Clientes\Actualizar.cshtml" />
+    <Content Include="Views\Empresa\Ver.cshtml" />
+    <Content Include="Views\Empresa\Actualizar.cshtml" />
+    <Content Include="Views\ReporteForm\AgregarOrEditarFormProyecto.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54826</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54826/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

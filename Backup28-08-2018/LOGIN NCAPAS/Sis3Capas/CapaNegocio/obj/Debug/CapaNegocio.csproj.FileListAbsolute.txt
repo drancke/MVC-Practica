@@ -1,0 +1,7 @@
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\bin\Debug\CapaNegocio.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\bin\Debug\CapaNegocio.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\bin\Debug\CapaDatos.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\bin\Debug\CapaDatos.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\obj\Debug\CapaNegocio.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaNegocio\obj\Debug\CapaNegocio.pdb

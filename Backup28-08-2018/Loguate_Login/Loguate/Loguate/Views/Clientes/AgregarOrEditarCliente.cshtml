@@ -1,0 +1,152 @@
+﻿@using System.Web.UI.WebControls
+@model Loguate.Models.Cliente
+
+@{
+    ViewBag.Title = "AgregarOrEditarCliente";
+    Layout = null;
+}
+<style>
+    #label {
+        color: #ff6600;
+    }
+
+    .tituto {
+        color: white;
+    }
+
+    .fieldset {
+        border: 1px solid #ff6600;
+        padding: 10px;
+    }
+
+
+    .btn-default {
+        color: #fff0f5;
+        background-color: #ff6600;
+        border-color: #ff6600;
+    }
+</style>
+
+
+
+
+@using (Html.BeginForm("AgregarOrEditarCliente", "Clientes", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return jQueryAjaxPost(this);", data_restUrl = Url.Action("AgregarOrEditarCliente", "Clientes", new { id = 0 }) }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="">
+    <div class="container borde" style="background-color:#444; border-radius:20px;">
+        <form class="form-inline">
+   
+        <br />
+        <div class="form-row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID_Cliente)
+
+            <fieldset class="fieldset">
+                <legend style="color: #ff6600">Informacion De La Empresa.</legend>
+
+                <div class="form-group">
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.CodigoRNC, htmlAttributes: new { @class = "control-label ",id="label",Style="focus" })
+
+                        @Html.TextBoxFor(model => model.CodigoRNC, new { @class = "form-control", style = "background-color:#444;color:White;" })
+                        @Html.ValidationMessageFor(model => model.CodigoRNC, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre de la empresa", style = "background-color:#444;color:White;" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.nombreProducto, htmlAttributes: new { @class = "control-label", id = "label" })
+
+                    @*@Html.ListBoxFor(model => model.ID_Producto)*@
+
+                    <select multiple="multiple" style="width: 100%; background-color:#444;color:White;" id="lista" name="lista" class="form-control">
+
+                        @foreach (var p in Model.Productos)
+                        {
+                            <option value=@p.ID_Producto>@p.Nombre</option>
+                        }
+
+                    </select>
+
+
+                    @Html.ValidationMessageFor(model => model.nombreProducto, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group col-md-4">
+
+                    @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                    @Html.TextAreaFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control", rows = "3", placeholder = "Direccion de la empresa", style = "background-color:#444;color:White;" } })
+                    @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                    @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", placeholder = "Correo Electronico....", style = "background-color:#444;color:White;" } })
+                    @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+
+                </div>
+            </fieldset>
+            <br />
+            <fieldset class="fieldset">
+                <legend style="color: #ff6600">Informacion del Contacto.</legend>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.nombreContacto, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                    @Html.EditorFor(model => model.nombreContacto, new { htmlAttributes = new { @class = "form-control",PlaceHolder="Nombre del contacto.", style = "background-color:#444;color:White;" } })
+                    @Html.ValidationMessageFor(model => model.nombreContacto, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.telefonoContacto, htmlAttributes: new { @class = "control-label", id = "label" })
+
+                    @Html.EditorFor(model => model.telefonoContacto, new { htmlAttributes = new { @class = "form-control", PlaceHolder = " Numero Telefonico del contacto.", style = "background-color:#444;color:White;" } })
+                    @Html.ValidationMessageFor(model => model.telefonoContacto, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.correoContacto, htmlAttributes: new { @class = "control-label", id = "label" })
+
+                    @Html.EditorFor(model => model.correoContacto, new { htmlAttributes = new { @class = "form-control",placeholder="Correo Electronico del contacto", style = "background-color:#444;color:White;" } })
+                    @Html.ValidationMessageFor(model => model.correoContacto, "", new { @class = "text-danger" })
+
+                </div>
+              
+            </fieldset>
+            <br/>
+            <div class="col-md-4 right">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+                @if (Model.ID_Cliente != 0)
+                {
+                    <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("AgregarOrEditarCliente","Clientes",new{id=0})',false)"><i class="fa fa-plus"></i> Agregar Cliente</a>
+                }
+            </div>
+            <br/>
+            <br/>
+        </div>
+            </form></div></div>
+            }
+
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

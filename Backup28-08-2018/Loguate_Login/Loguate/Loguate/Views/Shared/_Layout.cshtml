@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu Dropdown Adaptable</title>
+
+    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/Miestilo.css")
+    @Scripts.Render("~/bundles/modernizr")*@
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/reset.css" rel="stylesheet" />
+  
+    <style>
+        table a {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-fixed-top" style="margin:0;" role="navigation" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "IndexPrincipal", "Employee", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Registrar proyectos", "IndexProyecto", "ReporteForm", null, new { @class = "navbar-brand" })</li>
+                    
+                 
+                    <li class="dropdown">
+                        <a class="dropdown-toggle navbar-brand">Configuracion<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a>@Html.ActionLink("Cliente", "IndexClientes", "Clientes", null, new { @class = "c" })</a></li>
+                            <li><a>@Html.ActionLink("Empresa", "IndexEmpresa", "Empresa", null, new { @class = "c" })</a></li>
+                            <li class="dropdown">
+                            <a href="https://www.henry-chavez.com" class="dropdown-toggle">Sistema<b class="caret right"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a>@Html.ActionLink("Productos", "IndexProducto", "Productos", null, new { @class = "c" })</a></li>
+                                <li><a>@Html.ActionLink("Area", "IndexArea", "AreaModulo", null, new { @class = "c" })</a></li>
+                                <li><a>@Html.ActionLink("Herramientas", "IndexHerramientas", "Herramienta", null, new { @class = "c" })</a></li>
+
+                            </ul>
+                            <li class="divider"></li>
+                    
+                            <li><a href="#">@Html.ActionLink("Consultor", "IndexConsultor", "Consultor", null, new { @class = "cliente" })</a></li>
+
+                        </ul>
+
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle">Administracion de usuario <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a></li>
+
+                      
+                        </ul>
+                    </li>
+             
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            
+           
+        </div>
+     
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <hr />
+        <br />
+        <br />
+        <footer>
+
+            @*<div class="text-center" >
+
+                <div class=" well well-sm">
+
+
+                    <p>LogicOne - Proyecto Web</p>
+
+                </div>
+
+            </div>*@
+
+        </footer>
+    </div>
+
+    <div class="loaderbody" id="loaderbody">
+        <div class="loader"></div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Scripts.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/menuresponsive.js"></script>*@
+    <script src="~/js/menuresponsive.js"></script>
+</body>
+</html>

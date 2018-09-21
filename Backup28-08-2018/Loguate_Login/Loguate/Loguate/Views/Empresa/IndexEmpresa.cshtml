@@ -1,0 +1,45 @@
+﻿<style>
+    .cuerpo {
+        background-color: #ff6600;
+        border-radius: 30px;
+        color: white;
+    }
+</style>
+
+<div class="cuerpo"><h1 align="center">Registro de Empresas.</h1></div>
+<hr />
+@{
+    ViewBag.Title = "IndexEmpresa";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#firstTab">Ver Empresas</a></li>
+    <li><a data-toggle="tab" href="#secondTab">Crear Nueva Empresas</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in  active">@Html.Action("VerEmpresas")</div>
+    <div id="secondTab" class="tab-pane fade in">@Html.Action("AgregarOrEditarEmpresas")</div>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#EmpresaTable").DataTable();
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+
+    </script>
+}
+
+
+
+

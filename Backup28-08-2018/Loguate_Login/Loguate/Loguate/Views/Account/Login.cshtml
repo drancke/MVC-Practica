@@ -1,0 +1,121 @@
+﻿@using Loguate.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+
+<style>
+
+    .recuerda {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: black;
+    }
+</style>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<link href="~/Login_v1/css/main.css" rel="stylesheet" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@*<img src="~/Login_v1/images/img-01.png" />*@
+<link href="~/Login_v1/vendor/select2/select2.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/select2/select2.js"></script>
+<script src="~/Login_v1/vendor/select2/select2.min.js"></script>
+<link href="~/Login_v1/vendor/select2/select2.min.css" rel="stylesheet" />
+<link href="~/Login_v1/vendor/css-hamburgers/hamburgers.css" rel="stylesheet" />
+<link href="~/Login_v1/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet" />
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="~/Login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Login_v1/vendor/bootstrap/js/popper.js"></script>
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/bootstrap/js/tooltip.js"></script>
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
+<link href="~/Login_v1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Login_v1/vendor/bootstrap/js/popper.min.js"></script>
+<link href="~/Login_v1/css/util.css" rel="stylesheet" />
+<script src="~/Login_v1/js/main.js"></script>
+<link href="~/Login_v1/vendor/animate/animate.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+
+@*<h2>@ViewBag.Title.</h2>*@
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt">
+                <img src="~/Content/LOGOS-LOGICONE-EDITADO-2.png" />
+                <img src="~/Login_v1/images/img-01.png" alt="IMG" />
+
+            </div>
+            <div class="login100-form validate-form">
+                <br />
+                <br />
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @*<h4>Use a local account to log in.</h4>
+            <hr />*@
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input100" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+
+
+                            @Html.PasswordFor(m => m.Password, new { @class = "input100" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe, new { @class = "recuerda" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                Login
+                            </button>
+                        </div>
+                        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                    }
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+
+
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}}

@@ -1,0 +1,42 @@
+﻿<style>
+    .cuerpo {
+        background-color: #ff6600;
+        border-radius: 30px;
+        color: white;
+    }
+</style>
+
+<div class="cuerpo"><h1 align="center">Registro de Clientes.</h1></div>
+<hr />
+@{
+    ViewBag.Title = "IndexClientes";
+
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#firstTab">Ver Clientes</a></li>
+    <li><a data-toggle="tab" href="#secondTab">Crear Cliente</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in active">@Html.Action("VerClientes")</div>
+    <div id="secondTab" class="tab-pane fade in ">@Html.Action("AgregarOrEditarCliente")</div>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#ClienteTable").DataTable();
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+
+    </script>
+}

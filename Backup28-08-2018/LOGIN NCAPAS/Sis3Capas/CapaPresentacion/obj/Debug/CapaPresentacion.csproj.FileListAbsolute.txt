@@ -1,0 +1,17 @@
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.FormLogin.resources
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaNegocio.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaDatos.dll
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\bin\Debug\CapaDatos.pdb
+E:\TUT\PROYECTOS\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.FormPrincipal.resources
+C:\Users\RonetJhon\Downloads\Sis3Capas\Sis3Capas\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\RonetJhon\Downloads\Sis3Capas\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\RonetJhon\Downloads\Sis3Capas\Sis3Capas\CapaPresentacion\obj\Debug\CapaPresentacion.pdb

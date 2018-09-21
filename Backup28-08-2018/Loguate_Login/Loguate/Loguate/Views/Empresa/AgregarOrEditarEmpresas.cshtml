@@ -1,0 +1,190 @@
+﻿
+<head>
+
+
+
+   
+    <style type='text/css'>
+        .fieldset {
+            border: 1px solid #ff6600;
+            padding: 10px;
+        }
+        #label {
+            color: #ff6600;
+        }
+
+        .tituto {
+            color: white;
+        }
+
+        .fieldset {
+            border: 1px solid #ff6600;
+            padding: 10px;
+        }
+
+
+        .btn-default {
+            color: #fff0f5;
+            background-color: #ff6600;
+            border-color: #ff6600;
+        }
+    </style>
+
+</head>
+
+@model Loguate.Models.Empresa
+
+@{
+    ViewBag.Title = "AgregarOrEditarEmpresas";
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("AgregarOrEditarEmpresas", "Empresa", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return jQueryAjaxPost(this);", data_restUrl = Url.Action("AgregarOrEditarEmpresas", "Empresa", new { id = 0 }) }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="">
+        <div class="container borde" style="background-color:#444; border-radius:20px;">
+            <form class="form-inline">
+
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ID_Empresas)
+                <fieldset class="fieldset">
+                    <legend style="color: #ff6600">Informacion De La Empresa.</legend>
+
+                    <div class="form-group">
+
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.ID_Clientes, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                            @Html.DropDownListFor(model => model.ID_Clientes,ViewBag.clientesList as SelectList,"Select Cliente",new {@class="form-control"})
+                            @*new SelectList(Model.clientes, "ID_Cliente", "Nombre"), "Seleccione...", new { @class = "form-control" })*@
+                            @Html.ValidationMessageFor(model => model.ID_Clientes, "", new { @class = "text-danger" })
+
+                        </div>
+
+
+
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre de la empresa" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+             
+                    @*<div class="form-group  col-md-4">  
+                        @Html.DropDownListFor(model =>model.ID_Producto,new SelectList(" "),"--Select Empleados",new {@class="form-control"})       
+                    </div>*@
+                    
+                    
+
+                    <div class="form-group col-md-4">
+                        
+                        @Html.LabelFor(model => model.nombreProducto, htmlAttributes: new {@class = "control-label", id = "label"})
+                        <select multiple="multiple" style="width: 100%;" id="lista" name="lista" class="form-control">
+
+                            @foreach (var p in Model.Productos)
+                            {
+                                <option value=@p.ID_Producto>@p.Nombre</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.nombreProducto, "", new {@class = "text-danger"})
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control", placeholder = "Direccion de la empresa" } })
+                        @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label", id = "label" })
+
+                        @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefono" } })
+                        @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", placeholder = "Correo Electronico...." } })
+                        @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+
+                    </div>
+                </fieldset>
+
+
+                <br />
+                <fieldset class="fieldset">
+                    <legend style="color: #ff6600">Información de contacto.</legend>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.nombreContacto, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.nombreContacto, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre del contacto.." } })
+                        @Html.ValidationMessageFor(model => model.nombreContacto, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.telefonoContacto, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.telefonoContacto, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefono del contacto.." } })
+                        @Html.ValidationMessageFor(model => model.telefonoContacto, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.correoContacto, htmlAttributes: new { @class = "control-label ", id = "label" })
+
+                        @Html.EditorFor(model => model.correoContacto, new { htmlAttributes = new { @class = "form-control", placeholder = "Correo Electonico del contacto.." } })
+                        @Html.ValidationMessageFor(model => model.correoContacto, "", new { @class = "text-danger" })
+
+                    </div>
+                </fieldset>
+
+                <br />
+                <div class="col-md-4 right">
+                    <input type="submit" value="Guardar" class="btn btn-default" />
+                    @if (Model.ID_Empresas != 0)
+                    {
+                        <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("AgregarOrEditarEmpresas","Empresa",new{id=0})',false)"><i class="fa fa-plus"></i> Agregar Empresa</a>
+                    }
+                </div>
+                <br />
+                <br />
+            </form>
+
+        </div></div>
+
+    
+   
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    <script>
+        $(document).ready(function() {
+            $("#ID_Cliente").change(function() {
+                $.get("/Empresa/GetEmpleadoListe",
+                    { ID_Cliente: $("#ID_Cliente").val() },
+                    function(data) {
+                        $("#ID_Producto").empty();
+                        $.each(data,
+                            function(index, row) {
+                                $("#ID_Producto").append("<option value='" + row.ID_Producto + "'>" + row.Nombre + "</option>")
+                            });
+                    });
+            });
+        });
+
+    </script>
+}

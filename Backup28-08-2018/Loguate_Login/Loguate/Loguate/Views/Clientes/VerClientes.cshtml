@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Loguate.Models.Cliente>
+
+@{
+    ViewBag.Title = "VerClientes";
+    Layout = null;
+}
+
+<table class="table table-striped table-condensed" id="ClienteTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoRNC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreContacto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefonoContacto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correoContacto)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.nombreProducto)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoRNC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreContacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefonoContacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correoContacto)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.nombreProducto)
+            </td>*@
+            <td>
+                <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("Actualizar", "Clientes", new { id = @item.ID_Cliente })')"><i class="fa fa-pencil fa-lg"></i></a>
+                <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("DeleteClientes", "Clientes", new { id=@item.ID_Cliente})')"><i class="fa fa-trash fa-lg"></i></a>
+                <a class="btn btn-success btn-sm" href="~/Clientes/Ver/@item.ID_Cliente" title="Ver cliente"> <i class="glyphicon glyphicon-eye-open" ></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

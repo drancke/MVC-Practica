@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Loguate.Models.Producto>
+
+@{
+    ViewBag.Title = "VerProductos";
+    Layout = null;
+}
+
+<div class="borde">
+    <table class="table table-striped table-condensed" id="ProductoTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AgregarOrEditarProducto", "Productos", new { id=@item.ID_Producto})')"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("DeleteProducto", "Productos", new { id=@item.ID_Producto})')"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            }
+         
+        </tbody>
+    </table>
+
+</div>

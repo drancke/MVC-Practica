@@ -1,0 +1,140 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Actualizar";
+}
+@model Loguate.Models.Cliente
+
+@{
+    ViewBag.Title = Model.CodigoRNC + " " + Model.Nombre;
+    List<Loguate.Models.Producto> producto = ViewBag.Producto;
+    Layout = null;
+}
+
+<ol class="breadcrumb">
+    <li><a href="~/Clientes/IndexClientes" style="color:blue">Clientes</a></li>
+    <li class="active" style="color:red;">@Model.Nombre</li>
+</ol>
+
+
+@using (Html.BeginForm("Guardar", "Clientes", FormMethod.Post, new { id = "cliente" }))
+{
+    @Html.HiddenFor(model => model.ID_Cliente)
+    <div class="panel panel-default">
+    <div class="panel-heading">Informacion del cliente</div>
+    <div class="panel-body">
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID_Cliente)
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CodigoRNC, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CodigoRNC, new { htmlAttributes = new { @class = "form-control", @id = "Habi", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.CodigoRNC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.nombreContacto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nombreContacto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombreContacto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.telefonoContacto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.telefonoContacto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefonoContacto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.correoContacto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.correoContacto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.correoContacto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Productos instalados en el cliente</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            @foreach (var p in producto)
+            {
+
+                var instalados = false;
+                foreach (var p2 in Model.Productos)
+                {
+                    if (p.ID_Producto == p2.ID_Producto)
+                    {
+                        instalados = true;
+                        break;
+                    }
+
+                }
+
+                <li class="list-group-item">
+
+                    <label> <input type="checkbox" @(instalados ? "checked" : "") name="productos" value=@p.ID_Producto /> @p.Nombre</label>
+
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+<div class="text-right">
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+
+
+</div>
+}
+
+
+
+
+
+
+
